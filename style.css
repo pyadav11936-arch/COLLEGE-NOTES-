@@ -120,3 +120,188 @@
     display: none;
   }
 }
+/* COLORFUL WEBSITE BACKGROUND */
+
+body {
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      #42206b 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 25%,
+      #163c75 0%,
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #120d25,
+      #191331,
+      #101d3c
+    );
+  color: #f8fafc;
+}
+
+/* NAVBAR */
+
+.header {
+  background: #17112beF;
+  border-bottom: 1px solid #ffffff20;
+}
+
+.logo {
+  color: #ffffff;
+}
+
+nav a {
+  color: #ddd6fe;
+}
+
+nav a:hover {
+  color: #f9a8d4;
+}
+
+/* HERO */
+
+.hero {
+  background:
+    linear-gradient(
+      120deg,
+      #40206b,
+      #243c83,
+      #70275f
+    );
+  border: 1px solid #ffffff25;
+  box-shadow: 0 20px 60px #05081670;
+}
+
+/* SECTION HEADINGS */
+
+.section-heading h2 {
+  color: #ffffff;
+}
+
+.section-heading p {
+  color: #c4b9dc;
+}
+
+/* SEARCH BAR */
+
+.search-wrap {
+  background: #251c3d;
+  border: 1px solid #665184;
+  box-shadow: 0 10px 30px #05081650;
+}
+
+.search-wrap input {
+  background: transparent;
+  color: #ffffff;
+}
+
+.search-wrap input::placeholder {
+  color: #b7a9ce;
+}
+
+/* SUBJECT CARDS */
+
+.card {
+  background: linear-gradient(
+    145deg,
+    #2a2046,
+    #1e2546
+  );
+  border: 1px solid #ffffff20;
+  box-shadow: 0 12px 35px #05081650;
+}
+
+.card:hover {
+  border-color: #c084fc;
+  box-shadow: 0 18px 45px #8b5cf640;
+}
+
+.card h3 {
+  color: #ffffff;
+}
+
+.card p {
+  color: #d1c7e4;
+}
+
+.card-label {
+  color: #c4b5fd;
+}
+
+/* PDF BUTTONS */
+
+.view-btn {
+  background: linear-gradient(
+    90deg,
+    #7c3aed,
+    #4f6cf5
+  );
+  color: #ffffff;
+}
+
+.view-btn:hover {
+  background: linear-gradient(
+    90deg,
+    #9333ea,
+    #2563eb
+  );
+}
+
+.download-btn {
+  background: #3b2b59;
+  color: #f0abfc;
+  border: 1px solid #765a9b;
+}
+
+.download-btn:hover {
+  background: #4a356b;
+}
+
+/* ABOUT ME */
+
+.about {
+  background: linear-gradient(
+    120deg,
+    #342052,
+    #1d315a
+  );
+  border: 1px solid #ffffff20;
+}
+
+.about h2 {
+  color: #ffffff;
+}
+
+.about p {
+  color: #ded6ee;
+}
+
+.about-chip {
+  background: #4a356b;
+  color: #f5d0fe;
+  border: 1px solid #ffffff20;
+}
+
+/* FOOTER */
+
+footer {
+  background: #0d0a1b;
+  border-top: 1px solid #ffffff20;
+  color: #ffffff;
+}
+
+footer p {
+  color: #c4b5dc;
+}
+
+footer span {
+  color: #a99bbf;
+}
+
+.empty {
+  color: #e9d5ff;
+}
