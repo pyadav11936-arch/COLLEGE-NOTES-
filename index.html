@@ -7,9 +7,10 @@
   <title>Priyanshu Yadav | StudyHub</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="header">
+<header class="header" id="home">
   <a class="logo" href="#home">Study<span>Hub.</span></a>
   <nav>
     <a href="#home">Home</a>
@@ -19,67 +20,76 @@
 </header>
 
 <main>
-  <!-- HOME / HERO -->
-  <section class="hero" id="home">
+
+  <!-- HERO SECTION -->
+  <section class="hero">
     <div class="hero-text">
-      <span class="tag">MY LEARNING SPACE</span>
-
-      <h1>
-        Hello, I'm
-        <span class="name-color">Priyanshu Yadav</span>
-      </h1>
-
-      <h2>B.Tech CSE Student</h2>
-
+      <span class="tag">WELCOME TO MY WEBSITE</span>
+      <h1>Hello, I'm</h1>
+      <h2 class="name-color">Priyanshu Yadav</h2>
+      <h3>B.Tech CSE Student</h3>
       <p>
-        Learn, practice and grow. Find my college notes,
-        subject-wise PDFs and useful study material in one place.
+        Learn, Practice and Grow.
+        Explore my college notes, PDFs and
+        programming resources in one place.
       </p>
-
-      <a class="main-btn" href="#subjects">
+      <a href="#subjects" class="main-btn">
         Explore My Notes →
       </a>
     </div>
 
-    <div class="hero-art">
-      <div class="art-icon">📚</div>
-      <div class="art-caption">LEARN • BUILD • REPEAT</div>
+    <div class="hero-photo">
+      <img src="priyanshu.png" alt="Priyanshu Yadav">
+      <span>✦ CSE STUDENT</span>
     </div>
   </section>
 
-  <!-- NOTES SECTION -->
+
+  <!-- SUBJECT NOTES -->
   <section class="section" id="subjects">
+
     <div class="section-heading">
-      <span class="tag">STUDY MATERIAL</span>
-      <h2>Explore My Notes</h2>
-      <p>Search your subject and open or download its PDF.</p>
+      <span class="tag">MY STUDY MATERIAL</span>
+      <h2>Explore My Subjects</h2>
+      <p>Choose your subject and open or download its PDF.</p>
     </div>
 
     <div class="search-wrap">
       <span>⌕</span>
       <input
-        id="search"
         type="text"
-        placeholder="Search Physics, Maths, C++..."
+        id="search"
+        placeholder="Search Physics, Mathematics, C++..."
       >
     </div>
 
-    <div class="cards" id="cards">
+    <div class="cards">
 
       <!-- PHYSICS -->
-      <article class="card" data-name="physics quantum mechanics">
-        <div class="card-icon purple">⚛</div>
-        <span class="card-label">SUBJECT 01</span>
-        <h3>Physics</h3>
-        <p>Quantum Mechanics and Applications</p>
+      <article class="card physics" data-name="physics quantum mechanics">
+        <div class="subject-top">
+          <div class="subject-icon">⚛</div>
+          <div>
+            <h3>Physics</h3>
+            <span class="subject-tag">ST 1</span>
+            <p>Quantum Mechanics and Applications</p>
+          </div>
+        </div>
+
+        <div class="pdf-name">
+          <div class="pdf-icon">PDF</div>
+          <div>
+            <strong>Quantumphysics.pdf</strong>
+            <small>Physics Study Notes</small>
+          </div>
+        </div>
 
         <div class="card-actions">
           <a class="view-btn"
              href="notes/Quantumphysics.pdf"
              target="_blank">
-            View PDF ↗
+            ◉ View PDF →
           </a>
-
           <a class="download-btn"
              href="notes/Quantumphysics.pdf"
              download>
@@ -87,21 +97,33 @@
           </a>
         </div>
       </article>
+
 
       <!-- MATHEMATICS -->
-      <article class="card" data-name="mathematics maths calculus">
-        <div class="card-icon blue">∑</div>
-        <span class="card-label">SUBJECT 02</span>
-        <h3>Mathematics</h3>
-        <p>Calculus, Algebra and Engineering Maths</p>
+      <article class="card mathematics" data-name="mathematics maths calculus">
+        <div class="subject-top">
+          <div class="subject-icon">∑</div>
+          <div>
+            <h3>Mathematics</h3>
+            <span class="subject-tag">ST 1</span>
+            <p>Calculus, Algebra and Differential Equations</p>
+          </div>
+        </div>
+
+        <div class="pdf-name">
+          <div class="pdf-icon">PDF</div>
+          <div>
+            <strong>maths.pdf</strong>
+            <small>Engineering Mathematics Notes</small>
+          </div>
+        </div>
 
         <div class="card-actions">
           <a class="view-btn"
              href="notes/maths.pdf"
              target="_blank">
-            View PDF ↗
+            ◉ View PDF →
           </a>
-
           <a class="download-btn"
              href="notes/maths.pdf"
              download>
@@ -109,21 +131,33 @@
           </a>
         </div>
       </article>
+
 
       <!-- PROGRAMMING -->
-      <article class="card" data-name="programming c c++ coding">
-        <div class="card-icon green">&lt;/&gt;</div>
-        <span class="card-label">SUBJECT 03</span>
-        <h3>Programming</h3>
-        <p>C Language, C++ and Coding Practice</p>
+      <article class="card programming" data-name="programming c c++ coding dsa">
+        <div class="subject-top">
+          <div class="subject-icon">&lt;/&gt;</div>
+          <div>
+            <h3>Programming</h3>
+            <span class="subject-tag">C / C++</span>
+            <p>C Language, C++ and DSA Basics</p>
+          </div>
+        </div>
+
+        <div class="pdf-name">
+          <div class="pdf-icon">PDF</div>
+          <div>
+            <strong>programming.pdf</strong>
+            <small>Programming Study Notes</small>
+          </div>
+        </div>
 
         <div class="card-actions">
           <a class="view-btn"
              href="notes/programming.pdf"
              target="_blank">
-            View PDF ↗
+            ◉ View PDF →
           </a>
-
           <a class="download-btn"
              href="notes/programming.pdf"
              download>
@@ -132,20 +166,32 @@
         </div>
       </article>
 
+
       <!-- ELECTRICAL -->
-      <article class="card" data-name="electrical engineering">
-        <div class="card-icon orange">ϟ</div>
-        <span class="card-label">SUBJECT 04</span>
-        <h3>Electrical</h3>
-        <p>Fundamentals of Electrical Engineering</p>
+      <article class="card electrical" data-name="electrical engineering">
+        <div class="subject-top">
+          <div class="subject-icon">ϟ</div>
+          <div>
+            <h3>Electrical</h3>
+            <span class="subject-tag">ST 1</span>
+            <p>Fundamentals of Electrical Engineering</p>
+          </div>
+        </div>
+
+        <div class="pdf-name">
+          <div class="pdf-icon">PDF</div>
+          <div>
+            <strong>electrical.pdf</strong>
+            <small>Electrical Engineering Notes</small>
+          </div>
+        </div>
 
         <div class="card-actions">
           <a class="view-btn"
              href="notes/electrical.pdf"
              target="_blank">
-            View PDF ↗
+            ◉ View PDF →
           </a>
-
           <a class="download-btn"
              href="notes/electrical.pdf"
              download>
@@ -159,30 +205,32 @@
     <p id="empty" class="empty" hidden>
       No subject found. Try another search.
     </p>
+
   </section>
+
 
   <!-- ABOUT ME -->
   <section class="about" id="about">
-    <div>
-      <span class="tag">ABOUT THE CREATOR</span>
-      <h2>Hi, I'm Priyanshu Yadav.</h2>
-
-      <p>
-        I'm a first-year B.Tech CSE student.
-        This website is my learning project, created to
-        organize study material and practice web development.
-      </p>
+    <span class="tag">ABOUT THE CREATOR</span>
+    <h2>Priyanshu Yadav</h2>
+    <p>
+      First-year B.Tech CSE student.
+      This website is my learning project to
+      organize notes and practice web development.
+    </p>
+    <div class="about-chips">
+      <span>💻 CSE Student</span>
+      <span>🚀 Learning Coding</span>
+      <span>📚 Study Resources</span>
     </div>
-
-    <div class="about-chip">💻 CSE Student</div>
-    <div class="about-chip">🚀 Learning Web Development</div>
   </section>
+
 </main>
 
 <footer>
-  <strong>Priyanshu Yadav</strong>
-  <p>Made with passion for learning and coding.</p>
-  <span>© 2026 StudyHub</span>
+  <h3>StudyHub.</h3>
+  <p>Created by Priyanshu Yadav</p>
+  <small>Learn • Practice • Grow | © 2026</small>
 </footer>
 
 <script src="script.js"></script>
