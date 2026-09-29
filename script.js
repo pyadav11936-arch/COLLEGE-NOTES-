@@ -20,3 +20,11 @@ search.addEventListener("input", function () {
 
   empty.hidden = count !== 0;
 });
+
+function openWebsite() {
+  document.getElementById("welcome").classList.add("hide");
+}
+
+setTimeout(function () {
+  openWebsite();
+}, 30000);
