@@ -4,208 +4,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Priyanshu Yadav | B.Tech CSE</title>
+  <title>Priyanshu | College Notes</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- WELCOME SCREEN -->
+  <!-- Welcome Screen -->
   <section class="welcome-screen" id="welcome">
-    <div class="bg-text">B.TECH CSE</div>
+    <div class="welcome-bg">B.TECH CSE</div>
+    <div class="corner-text left">CODE<br>LEARN<br>BUILD<br>GROW</div>
+    <div class="corner-text right">DREAM<br>CREATE<br>ACHIEVE</div>
 
-    <div class="corner left">CODE<br>LEARN<br>BUILD<br>GROW</div>
-    <div class="corner right">Better<br>Version<br>of Me</div>
-
-    <div class="welcome-card">
-      <p class="eyebrow">✦ THE JOURNEY BEGINS ✦</p>
+    <div class="welcome-content">
+      <p class="welcome-small">✦ THE JOURNEY BEGINS ✦</p>
       <h1>WELCOME</h1>
-      <h2>TO MY PROFILE</h2>
+      <h2>TO MY COLLEGE NOTES</h2>
       <h3>PRIYANSHU YADAV</h3>
-      <div class="neon-line"></div>
-      <p class="motto">DREAM BIG • WORK HARD • MAKE IT HAPPEN</p>
-      <p class="timer-message">
-        🚀 Your journey starts here...
-        <br>
+      <div class="welcome-line"></div>
+      <p class="welcome-tagline">DREAM BIG • WORK HARD • MAKE IT HAPPEN</p>
+      <p class="auto-message">
+        🚀 Your learning journey starts here...<br>
         Website opening in <strong>30 seconds</strong>
       </p>
+      <button onclick="openWebsite()">Enter Website</button>
     </div>
   </section>
 
-  <!-- MAIN WEBSITE -->
-  <div class="website" id="home">
-
-    <!-- NAVBAR -->
-    <header class="navbar">
-      <a class="logo" href="#home">
-        <span>&lt;/&gt;</span>
-        <div>
-          <strong>PRIYANSHU YADAV</strong>
-          <small>B.Tech CSE | Learner | Developer</small>
-        </div>
-      </a>
-
-      <nav>
+  <!-- Main Website -->
+  <header>
+    <nav class="navbar">
+      <a class="logo" href="#">PY<span>.</span> NOTES</a>
+      <div class="nav-links">
         <a href="#home">Home</a>
+        <a href="#subjects">Subjects</a>
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 
-    <!-- HERO -->
-    <main>
-      <section class="hero section" id="about">
-        <div class="hero-text">
-          <p class="hello">Hello, I'm</p>
-          <h1>Priyanshu <span>Yadav</span></h1>
-          <h3>B.Tech CSE Student | Future Developer</h3>
-          <p class="intro">
-            I'm a passionate Computer Science student, always eager
-            to learn new technologies, build interesting projects
-            and grow into a better version of myself.
-          </p>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <p class="eyebrow">WELCOME TO MY STUDY SPACE</p>
+        <h1>Learn Today,<br><span>Lead Tomorrow.</span></h1>
+        <p class="hero-description">
+          B.Tech CSE notes, study material and resources
+          all in one place.
+        </p>
+        <a class="main-button" href="#subjects">Explore Notes ↓</a>
+      </div>
 
-          <div class="hero-buttons">
-            <a class="btn primary" href="#projects">Explore My Work →</a>
-            <a class="btn outline" href="#contact">Contact Me ✉</a>
-          </div>
-        </div>
+      <div class="profile-card">
+        <div class="profile-glow"></div>
+        <img src="priyanshu.png" alt="Priyanshu Yadav">
+        <h2>Priyanshu Yadav</h2>
+        <p>B.Tech CSE | 1st Year</p>
+        <span class="profile-tag">STUDENT • LEARNER • DEVELOPER</span>
+      </div>
+    </section>
 
-        <div class="code-window">
-          <div class="window-top">
-            <span></span><span></span><span></span>
-            <small>priyanshu.cpp</small>
-          </div>
-          <div class="code">
-            <p><span class="pink">#include</span> &lt;iostream&gt;</p>
-            <p><span class="blue">using namespace</span> std;</p>
-            <br>
-            <p><span class="purple">int</span> main() {</p>
-            <p class="indent"><span class="cyan">cout</span> &lt;&lt; <span class="yellow">"Hello World!"</span>;</p>
-            <p class="indent"><span class="cyan">cout</span> &lt;&lt; <span class="yellow">"Keep Learning";</span></p>
-            <p class="indent"><span class="purple">return</span> 0;</p>
-            <p>}</p>
-            <br>
-            <p class="terminal"> &gt; Building my future_</p>
-          </div>
-          <div class="code-caption">CODE • CREATE • REPEAT</div>
-        </div>
-      </section>
+    <section class="subjects-section" id="subjects">
+      <div class="section-heading">
+        <p class="eyebrow">YOUR STUDY MATERIAL</p>
+        <h2>Explore <span>Subjects</span></h2>
+        <p>Find and open your subject notes easily.</p>
+      </div>
 
-      <!-- SKILLS -->
-      <section class="section" id="skills">
-        <div class="section-heading">
-          <p>WHAT I'M LEARNING</p>
-          <h2>My <span>Skills</span></h2>
-        </div>
+      <div class="search-box">
+        <span>⌕</span>
+        <input type="text" id="search"
+          placeholder="Search your subject...">
+      </div>
 
-        <div class="skill-grid">
-          <article class="skill-card pink-card">
-            <div class="skill-icon">&lt;/&gt;</div>
-            <h3>C++</h3>
-            <p>Programming<br>& Problem Solving</p>
-          </article>
+      <div class="cards">
+        <article class="card" data-name="quantum physics">
+          <div class="subject-icon purple">⚛</div>
+          <p class="subject-number">SUBJECT 01</p>
+          <h3>Quantum Physics</h3>
+          <p>Quantum mechanics and its applications.</p>
+          <a href="notes/Quantumphysics.pdf" target="_blank">
+            Open Notes ↗
+          </a>
+        </article>
 
-          <article class="skill-card blue-card">
-            <div class="skill-icon">⌘</div>
-            <h3>DSA</h3>
-            <p>Data Structures<br>& Algorithms</p>
-          </article>
+        <article class="card" data-name="engineering mathematics maths">
+          <div class="subject-icon blue">∑</div>
+          <p class="subject-number">SUBJECT 02</p>
+          <h3>Mathematics</h3>
+          <p>Engineering mathematics study material.</p>
+          <a href="notes/maths.pdf" target="_blank">
+            Open Notes ↗
+          </a>
+        </article>
 
-          <article class="skill-card purple-card">
-            <div class="skill-icon">🌐</div>
-            <h3>Web Development</h3>
-            <p>HTML | CSS | JS<br>Currently Learning</p>
-          </article>
+        <article class="card" data-name="programming c c++">
+          <div class="subject-icon green">&lt;/&gt;</div>
+          <p class="subject-number">SUBJECT 03</p>
+          <h3>Programming</h3>
+          <p>Programming concepts and practice notes.</p>
+          <a href="notes/programming.pdf" target="_blank">
+            Open Notes ↗
+          </a>
+        </article>
 
-          <article class="skill-card gold-card">
-            <div class="skill-icon">★</div>
-            <h3>Logical Thinking</h3>
-            <p>Practice | Improve<br>Grow</p>
-          </article>
-        </div>
-      </section>
+        <article class="card" data-name="electrical electrical engineering">
+          <div class="subject-icon orange">ϟ</div>
+          <p class="subject-number">SUBJECT 04</p>
+          <h3>Electrical Engineering</h3>
+          <p>Fundamentals of electrical engineering.</p>
+          <a href="notes/electrical.pdf" target="_blank">
+            Open Notes ↗
+          </a>
+        </article>
+      </div>
 
-      <!-- PROJECTS -->
-      <section class="section" id="projects">
-        <div class="section-heading">
-          <p>MY PRACTICE WORK</p>
-          <h2>My <span>Projects</span></h2>
-        </div>
+      <p id="empty" hidden>No subject found. Try another name.</p>
+    </section>
 
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-icon">📘</div>
-            <h3>College Notes Website</h3>
-            <p>A place to organize and view study notes for college subjects.</p>
-            <span class="tag">HTML • CSS • JS</span>
-          </article>
+    <section class="about-section" id="about">
+      <p class="eyebrow">ABOUT THIS WEBSITE</p>
+      <h2>My <span>Learning Space</span></h2>
+      <p>
+        This website is created by Priyanshu Yadav,
+        a first-year B.Tech CSE student. It helps organize
+        study material and makes notes easy to access.
+      </p>
+    </section>
+  </main>
 
-          <article class="project-card">
-            <div class="project-icon">💻</div>
-            <h3>C++ Practice</h3>
-            <p>Small programming exercises to improve my logic and coding skills.</p>
-            <span class="tag">C++</span>
-          </article>
-
-          <article class="project-card">
-            <div class="project-icon">🚀</div>
-            <h3>Future Projects</h3>
-            <p>Learning new concepts and preparing to build more useful projects.</p>
-            <span class="tag">Learning</span>
-          </article>
-        </div>
-      </section>
-
-      <!-- EDUCATION / JOURNEY -->
-      <section class="section" id="education">
-        <div class="section-heading">
-          <p>MY ROADMAP</p>
-          <h2>My <span>Journey</span></h2>
-        </div>
-
-        <div class="journey">
-          <div class="journey-item">
-            <span class="dot"></span>
-            <h3>B.Tech CSE — 1st Year</h3>
-            <p>Vishveshwarya Group of Institution</p>
-            <small>My college journey begins</small>
-          </div>
-          <div class="journey-item">
-            <span class="dot"></span>
-            <h3>Learning & Building</h3>
-            <p>C++ | DSA | Web Development</p>
-            <small>Practicing and improving every day</small>
-          </div>
-          <div class="journey-item">
-            <span class="dot"></span>
-            <h3>Future Goals</h3>
-            <p>Become a skilled developer</p>
-            <small>Keep learning, keep creating</small>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section class="section contact" id="contact">
-        <div class="section-heading">
-          <p>LET'S CONNECT</p>
-          <h2>Contact <span>Me</span></h2>
-        </div>
-        <p>Thanks for visiting my profile. Let's learn and build something useful!</p>
-        <a class="btn primary" href="mailto:your-email@example.com">
-          Email Me ✉
-        </a>
-      </section>
-    </main>
-
-    <footer>
-      <p>© 2026 Priyanshu Yadav • B.Tech CSE</p>
-      <p>Built with curiosity and code ✨</p>
-    </footer>
-  </div>
+  <footer>
+    <p>© 2026 Priyanshu Yadav | College Notes</p>
+    <p>Keep Learning. Keep Growing. ✦</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
