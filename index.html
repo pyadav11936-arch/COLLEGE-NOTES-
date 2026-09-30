@@ -1,141 +1,237 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Priyanshu | College Notes</title>
+  <title>Priyanshu Yadav | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Welcome Screen -->
-  <section class="welcome-screen" id="welcome">
-    <div class="welcome-bg">B.TECH CSE</div>
-    <div class="corner-text left">CODE<br>LEARN<br>BUILD<br>GROW</div>
-    <div class="corner-text right">DREAM<br>CREATE<br>ACHIEVE</div>
+  <!-- WELCOME SCREEN -->
+  <section id="welcome" class="welcome-screen">
+    <div class="stars"></div>
 
-    <div class="welcome-content">
-      <p class="welcome-small">✦ THE JOURNEY BEGINS ✦</p>
-      <h1>WELCOME</h1>
-      <h2>TO MY COLLEGE NOTES</h2>
-      <h3>PRIYANSHU YADAV</h3>
-      <div class="welcome-line"></div>
-      <p class="welcome-tagline">DREAM BIG • WORK HARD • MAKE IT HAPPEN</p>
-      <p class="auto-message">
-        🚀 Your learning journey starts here...<br>
-        Website opening in <strong>30 seconds</strong>
-      </p>
-      <button onclick="openWebsite()">Enter Website</button>
+    <div class="welcome-top">
+      <span>CODE</span>
+      <span>LEARN</span>
+      <span>BUILD</span>
+      <span>GROW</span>
+    </div>
+
+    <div class="welcome-center">
+      <div class="welcome-card">
+        <p class="journey">THE JOURNEY BEGINS</p>
+
+        <h1 class="fall word1">WELCOME</h1>
+        <h2 class="fall word2">TO MY PROFILE</h2>
+        <h3 class="fall word3">PRIYANSHU YADAV</h3>
+
+        <div class="neon-line"></div>
+
+        <p class="welcome-tagline">
+          DREAM BIG <span>✦</span> WORK HARD
+          <span>✦</span> MAKE IT HAPPEN
+        </p>
+
+        <p class="welcome-message">
+          🚀 Your journey starts here...
+        </p>
+
+        <p class="timer-text">
+          Website opening in
+          <strong id="countdown">10</strong> seconds
+        </p>
+
+        <button id="enterBtn" class="enter-btn">
+          ENTER WEBSITE →
+        </button>
+      </div>
+    </div>
+
+    <div class="welcome-bottom">
+      <span>✦</span> B.TECH CSE STUDENT
+      <span>✦</span> FUTURE DEVELOPER
+      <span>✦</span>
+    </div>
+
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>PRIYANSHU YADAV ✦ B.TECH CSE ✦ LEARN • BUILD • GROW ✦ </span>
+        <span>PRIYANSHU YADAV ✦ B.TECH CSE ✦ LEARN • BUILD • GROW ✦ </span>
+      </div>
     </div>
   </section>
 
-  <!-- Main Website -->
-  <header>
-    <nav class="navbar">
-      <a class="logo" href="#">PY<span>.</span> NOTES</a>
-      <div class="nav-links">
+
+  <!-- MAIN WEBSITE -->
+  <div id="mainWebsite" class="main-website">
+
+    <header class="navbar">
+      <div class="brand">
+        <div class="brand-icon">&lt;/&gt;</div>
+        <div>
+          <strong>PRIYANSHU YADAV</strong>
+          <small>B.Tech CSE | Student</small>
+        </div>
+      </div>
+
+      <nav>
         <a href="#home">Home</a>
         <a href="#subjects">Subjects</a>
         <a href="#about">About</a>
+      </nav>
+
+      <a class="connect-btn" href="#about">Let's Connect ↗</a>
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <p class="hello">Hello, I'm</p>
+
+          <h1 class="gradient-name">Priyanshu Yadav</h1>
+
+          <p class="hero-subtitle">
+            B.Tech CSE Student
+            <span>|</span> Learner
+            <span>|</span> Future Developer
+          </p>
+
+          <p class="hero-description">
+            I am a passionate Computer Science student, always eager
+            to learn new technologies, improve my skills and build
+            amazing projects.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#subjects" class="primary-btn">
+              Explore Subjects →
+            </a>
+            <a href="#about" class="secondary-btn">
+              About Me ✉
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="art-glow"></div>
+          <div class="code-window">
+            <div class="window-top">
+              <span></span><span></span><span></span>
+              <small>my-journey.cpp</small>
+            </div>
+            <div class="code-lines">
+              <p><span class="code-purple">#include</span> &lt;iostream&gt;</p>
+              <p><span class="code-blue">using namespace</span> std;</p>
+              <br>
+              <p><span class="code-purple">int</span> main() {</p>
+              <p class="indent"><span class="code-blue">string</span> name =</p>
+              <p class="indent code-green">"Priyanshu Yadav";</p>
+              <p class="indent">cout &lt;&lt; <span class="code-green">"Keep Learning!"</span>;</p>
+              <p class="indent"><span class="code-purple">return</span> 0;</p>
+              <p>}</p>
+            </div>
+          </div>
+          <div class="art-caption">
+            <span>Dream</span>
+            <span>Code</span>
+            <span>Create</span>
+          </div>
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+        </div>
+      </section>
+
+
+      <!-- SUBJECTS -->
+      <section id="subjects" class="subjects-section">
+        <div class="section-heading">
+          <p>MY STUDY MATERIAL</p>
+          <h2>My <span>Subjects</span></h2>
+          <div class="heading-line"></div>
+          <p class="section-description">
+            Open and read my B.Tech subject notes in PDF format.
+          </p>
+        </div>
+
+        <div class="subject-grid">
+
+          <article class="subject-card pink">
+            <div class="subject-icon">⚛</div>
+            <h3>Quantum Physics</h3>
+            <p>Physics Notes & Study Material</p>
+            <a href="notes/Quantumphysics.pdf" target="_blank">
+              View PDF <span>↗</span>
+            </a>
+          </article>
+
+          <article class="subject-card blue">
+            <div class="subject-icon">∑</div>
+            <h3>Engineering Mathematics</h3>
+            <p>Mathematics Notes & Study Material</p>
+            <a href="notes/maths.pdf" target="_blank">
+              View PDF <span>↗</span>
+            </a>
+          </article>
+
+          <article class="subject-card purple">
+            <div class="subject-icon">&lt;/&gt;</div>
+            <h3>Programming in C</h3>
+            <p>Programming Notes & Study Material</p>
+            <a href="notes/programming.pdf" target="_blank">
+              View PDF <span>↗</span>
+            </a>
+          </article>
+
+          <article class="subject-card yellow">
+            <div class="subject-icon">ϟ</div>
+            <h3>Electrical Engineering</h3>
+            <p>Electrical Notes & Study Material</p>
+            <a href="notes/electrical.pdf" target="_blank">
+              View PDF <span>↗</span>
+            </a>
+          </article>
+
+        </div>
+      </section>
+
+
+      <!-- ABOUT -->
+      <section id="about" class="about-section">
+        <div class="about-card">
+          <p class="about-label">GET TO KNOW ME</p>
+          <h2>About <span>Me</span></h2>
+          <p>
+            Hello! I am Priyanshu Yadav, a first-year B.Tech
+            Computer Science and Engineering student. I enjoy
+            learning programming and exploring new technologies.
+            This website is my space for sharing my study material
+            and learning journey.
+          </p>
+          <div class="about-details">
+            <div><strong>Name</strong><span>Priyanshu Yadav</span></div>
+            <div><strong>Course</strong><span>B.Tech CSE</span></div>
+            <div><strong>Year</strong><span>1st Year</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <footer class="footer">
+      <div class="footer-ticker">
+        <div class="footer-track">
+          <span>PRIYANSHU YADAV ✦ B.TECH CSE ✦ LEARN • BUILD • GROW ✦ </span>
+          <span>PRIYANSHU YADAV ✦ B.TECH CSE ✦ LEARN • BUILD • GROW ✦ </span>
+        </div>
       </div>
-    </nav>
-  </header>
+      <p>© 2026 Priyanshu Yadav | Keep Learning, Keep Growing</p>
+    </footer>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-text">
-        <p class="eyebrow">WELCOME TO MY STUDY SPACE</p>
-        <h1>Learn Today,<br><span>Lead Tomorrow.</span></h1>
-        <p class="hero-description">
-          B.Tech CSE notes, study material and resources
-          all in one place.
-        </p>
-        <a class="main-button" href="#subjects">Explore Notes ↓</a>
-      </div>
-
-      <div class="profile-card">
-        <div class="profile-glow"></div>
-        <img src="priyanshu.png" alt="Priyanshu Yadav">
-        <h2>Priyanshu Yadav</h2>
-        <p>B.Tech CSE | 1st Year</p>
-        <span class="profile-tag">STUDENT • LEARNER • DEVELOPER</span>
-      </div>
-    </section>
-
-    <section class="subjects-section" id="subjects">
-      <div class="section-heading">
-        <p class="eyebrow">YOUR STUDY MATERIAL</p>
-        <h2>Explore <span>Subjects</span></h2>
-        <p>Find and open your subject notes easily.</p>
-      </div>
-
-      <div class="search-box">
-        <span>⌕</span>
-        <input type="text" id="search"
-          placeholder="Search your subject...">
-      </div>
-
-      <div class="cards">
-        <article class="card" data-name="quantum physics">
-          <div class="subject-icon purple">⚛</div>
-          <p class="subject-number">SUBJECT 01</p>
-          <h3>Quantum Physics</h3>
-          <p>Quantum mechanics and its applications.</p>
-          <a href="notes/Quantumphysics.pdf" target="_blank">
-            Open Notes ↗
-          </a>
-        </article>
-
-        <article class="card" data-name="engineering mathematics maths">
-          <div class="subject-icon blue">∑</div>
-          <p class="subject-number">SUBJECT 02</p>
-          <h3>Mathematics</h3>
-          <p>Engineering mathematics study material.</p>
-          <a href="notes/maths.pdf" target="_blank">
-            Open Notes ↗
-          </a>
-        </article>
-
-        <article class="card" data-name="programming c c++">
-          <div class="subject-icon green">&lt;/&gt;</div>
-          <p class="subject-number">SUBJECT 03</p>
-          <h3>Programming</h3>
-          <p>Programming concepts and practice notes.</p>
-          <a href="notes/programming.pdf" target="_blank">
-            Open Notes ↗
-          </a>
-        </article>
-
-        <article class="card" data-name="electrical electrical engineering">
-          <div class="subject-icon orange">ϟ</div>
-          <p class="subject-number">SUBJECT 04</p>
-          <h3>Electrical Engineering</h3>
-          <p>Fundamentals of electrical engineering.</p>
-          <a href="notes/electrical.pdf" target="_blank">
-            Open Notes ↗
-          </a>
-        </article>
-      </div>
-
-      <p id="empty" hidden>No subject found. Try another name.</p>
-    </section>
-
-    <section class="about-section" id="about">
-      <p class="eyebrow">ABOUT THIS WEBSITE</p>
-      <h2>My <span>Learning Space</span></h2>
-      <p>
-        This website is created by Priyanshu Yadav,
-        a first-year B.Tech CSE student. It helps organize
-        study material and makes notes easy to access.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2026 Priyanshu Yadav | College Notes</p>
-    <p>Keep Learning. Keep Growing. ✦</p>
-  </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>

@@ -1,33 +1,30 @@
+const welcome = document.getElementById("welcome");
+const mainWebsite = document.getElementById("mainWebsite");
+const countdown = document.getElementById("countdown");
+const enterBtn = document.getElementById("enterBtn");
 
-// Welcome screen: open the website after 30 seconds
+let seconds = 10;
+let websiteOpened = false;
+
 function openWebsite() {
-  const welcome = document.getElementById("welcome");
-  if (welcome) {
-    welcome.classList.add("hide");
-  }
+  if (websiteOpened) return;
+
+  websiteOpened = true;
+  clearInterval(timer);
+
+  welcome.classList.add("hide");
+  mainWebsite.classList.add("show");
+
+  document.body.style.overflow = "auto";
 }
 
-setTimeout(openWebsite, 30000);
+const timer = setInterval(() => {
+  seconds--;
+  countdown.textContent = seconds;
 
-// Subject search
-const search = document.getElementById("search");
-const cards = document.querySelectorAll(".card");
-const empty = document.getElementById("empty");
+  if (seconds <= 0) {
+    openWebsite();
+  }
+}, 1000);
 
-search.addEventListener("input", function () {
-  const query = search.value.toLowerCase().trim();
-  let count = 0;
-
-  cards.forEach(function (card) {
-    const text = (
-      card.dataset.name + " " + card.innerText
-    ).toLowerCase();
-
-    const found = text.includes(query);
-    card.style.display = found ? "" : "none";
-
-    if (found) count++;
-  });
-
-  empty.hidden = count !== 0;
-});
+enterBtn.addEventListener("click", openWebsite);
