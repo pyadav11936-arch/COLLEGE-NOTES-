@@ -932,3 +932,19 @@ body {
     transition-duration: .01ms !important;
   }
 }
+.lion img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px #ff9900);
+  animation: lionGlow 2s infinite alternate;
+}
+
+@keyframes lionGlow {
+  from {
+    filter: drop-shadow(0 0 8px #ff9900);
+  }
+  to {
+    filter: drop-shadow(0 0 28px #ff5500);
+  }
+}
