@@ -5,359 +5,185 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Priyanshu Yadav | College Notes</title>
-
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #070b22;
-    color: white;
-    overflow-x: hidden;
-}
-
-.page {
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    background: radial-gradient(circle at top, #25205d, #070b22 70%);
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 22px 8%;
-    position: relative;
-    z-index: 5;
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
-    border: 2px solid #ff9d00;
-    padding: 10px 14px;
-    border-radius: 12px;
-    box-shadow: 0 0 18px #ff6500;
-}
-
-.logo span {
-    color: #ff9d00;
-}
-
-.tag {
-    color: #c7c8ff;
-    font-size: 14px;
-}
-
-.content {
-    min-height: 75vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px 15px 70px;
-    position: relative;
-    z-index: 2;
-}
-
-.small-title {
-    color: #ffbd59;
-    letter-spacing: 5px;
-    font-size: 13px;
-    margin-bottom: 24px;
-}
-
-h1 {
-    font-size: clamp(35px, 7vw, 76px);
-    font-weight: 900;
-    letter-spacing: 2px;
-    min-height: 1.3em;
-    text-shadow: 0 0 20px #9d48ff;
-    overflow-wrap: anywhere;
-}
-
-.letter {
-    display: inline-block;
-    opacity: 0;
-    animation: appear 0.3s forwards;
-}
-
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-        color: #ff5c00;
-        text-shadow: 0 0 25px #ff2400;
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-        color: #ffffff;
-        text-shadow: 0 0 15px #9d48ff;
-    }
-}
-
-.fire-line {
-    width: 180px;
-    height: 4px;
-    margin: 20px auto;
-    background: linear-gradient(90deg, #ff2400, #ffcc00, #ff4500);
-    border-radius: 100%;
-    box-shadow: 0 0 12px #ff4500, 0 0 30px #ff9d00;
-    animation: fire 0.8s infinite alternate;
-}
-
-@keyframes fire {
-    from { transform: scaleX(0.8); opacity: 0.65; }
-    to { transform: scaleX(1.2); opacity: 1; }
-}
-
-.subtitle {
-    color: #d1d4ff;
-    font-size: 17px;
-    margin: 10px 0 28px;
-    line-height: 1.7;
-}
-
-button {
-    padding: 15px 28px;
-    background: linear-gradient(90deg, #ff6a00, #ee0979);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
-    box-shadow: 0 0 22px #ff4c68;
-    transition: transform 0.3s;
-}
-
-button:hover {
-    transform: scale(1.07);
-}
-
-.bird {
-    position: absolute;
-    color: #dce5ff;
-    font-size: 25px;
-    opacity: 0.7;
-    animation: fly 12s linear infinite;
-    z-index: 1;
-}
-
-.bird:nth-child(1) { top: 20%; animation-duration: 13s; }
-.bird:nth-child(2) { top: 34%; animation-duration: 17s; animation-delay: -5s; }
-.bird:nth-child(3) { top: 48%; animation-duration: 15s; animation-delay: -8s; }
-.bird:nth-child(4) { top: 65%; animation-duration: 19s; animation-delay: -3s; }
-
-@keyframes fly {
-    from { left: -10%; transform: translateY(0) scaleX(1); }
-    50% { transform: translateY(-35px) scaleX(1); }
-    to { left: 110%; transform: translateY(10px) scaleX(1); }
-}
-
-.spark {
-    position: absolute;
-    bottom: -15px;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #ff9d00;
-    box-shadow: 0 0 12px #ff4500;
-    animation: rise 5s linear infinite;
-}
-
-@keyframes rise {
-    from { transform: translateY(0); opacity: 1; }
-    to { transform: translateY(-100vh); opacity: 0; }
-}
-
-.stars {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-        radial-gradient(2px 2px at 20% 30%, white 50%, transparent),
-        radial-gradient(2px 2px at 80% 20%, white 50%, transparent),
-        radial-gradient(2px 2px at 65% 70%, white 50%, transparent),
-        radial-gradient(2px 2px at 35% 80%, white 50%, transparent);
-    background-size: 180px 180px;
-    animation: twinkle 4s infinite alternate;
-}
-
-@keyframes twinkle {
-    from { opacity: 0.3; }
-    to { opacity: 0.9; }
-}
-
-#notesPage {
-    display: none;
-    min-height: 100vh;
-    padding-bottom: 50px;
-}
-
-.notes-content {
-    max-width: 850px;
-    margin: 45px auto;
-    padding: 20px;
-    text-align: center;
-}
-
-.notes-content h2 {
-    font-size: 34px;
-    margin: 30px 0 15px;
-}
-
-.note-card {
-    margin: 25px auto;
-    max-width: 500px;
-    padding: 25px;
-    border: 1px solid #7165dc;
-    background: #151638;
-    border-radius: 18px;
-    box-shadow: 0 0 20px #25205d;
-}
-
-.note-card p {
-    color: #d1d4ff;
-    margin: 15px 0 22px;
-}
-
-footer {
-    color: #9da4d5;
-    font-size: 12px;
-    margin-top: 45px;
-}
-
-@media (max-width: 600px) {
-    header { padding: 18px 5%; }
-    .tag { font-size: 11px; }
-    .subtitle { font-size: 15px; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#020817;color:white}
+header{padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#030817;border-bottom:1px solid #17466e;position:relative;z-index:3}
+.brand{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:bold}
+.logo{width:52px;height:52px;border:2px solid #ffbd4a;border-radius:50%;display:grid;place-items:center;color:#ffbd4a;font-size:23px;font-weight:bold;box-shadow:0 0 18px #ff8c00}
+nav{display:flex;gap:18px}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#00cfff}
+.home{min-height:85vh;position:relative;display:flex;align-items:center;padding:65px 7%;overflow:hidden;background:linear-gradient(90deg,rgba(0,5,20,.94),rgba(0,5,20,.45)),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85') center/cover}
+.content{position:relative;z-index:2;max-width:700px}
+.eyebrow{letter-spacing:4px;color:#d7e6ff}
+h1{font-size:clamp(38px,7vw,78px);margin:25px 0;color:#ffb735;text-shadow:0 0 18px #ff6500;overflow-wrap:anywhere}
+#name span{display:inline-block;opacity:0;animation:show .4s forwards}
+@keyframes show{to{opacity:1;transform:translateY(0)}from{opacity:0;transform:translateY(20px)}}
+.line{height:4px;width:200px;max-width:80%;background:linear-gradient(90deg,#ff3500,#ffe14a,#008dff);box-shadow:0 0 18px #ff7800;margin:20px 0;animation:glow 1s infinite alternate}
+@keyframes glow{to{opacity:.5;transform:scaleX(.8)}}
+.course{font-size:22px;letter-spacing:4px;margin:18px 0}
+.desc{color:#d5e5ff;letter-spacing:2px;line-height:1.9}
+.btn{border:1px solid #00cfff;border-radius:30px;padding:14px 26px;margin-top:25px;background:#053875;color:white;font-weight:bold;box-shadow:0 0 20px #008cff;cursor:pointer}
+.btn:hover{background:#0756a6}
+.lion{position:absolute;right:5%;bottom:17%;font-size:clamp(100px,20vw,220px);filter:drop-shadow(0 0 25px #ff7900);z-index:1}
+.bird{position:absolute;left:-10%;top:17%;font-size:28px;color:#b5eaff;animation:fly 16s linear infinite}
+.bird.b2{top:35%;animation-delay:-7s}
+.bird.b3{top:55%;animation-delay:-11s}
+@keyframes fly{to{left:110%;transform:translateY(35px)}}
+.spark{position:absolute;bottom:-10px;width:4px;height:4px;background:#ff9a00;border-radius:50%;box-shadow:0 0 10px orange;animation:rise 5s linear infinite}
+@keyframes rise{to{transform:translateY(-90vh);opacity:0}}
+footer{padding:22px 5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#020611;color:#c5d5ec;font-size:13px}
+#notes{display:none;min-height:100vh;background:#020817}
+.banner{text-align:center;padding:45px 15px 30px;background:linear-gradient(#06142d66,#020817),url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=85') center/cover}
+.banner .logo{width:75px;height:75px;margin:0 auto 15px;font-size:29px}
+.banner h2{font-size:clamp(35px,6vw,58px);margin:15px 0}
+.gold{color:#ffbd4a}
+.banner p{line-height:1.9;color:#d7e5ff;letter-spacing:2px}
+.heading{max-width:1050px;margin:25px auto;padding:0 22px}
+.heading h2{font-size:32px;margin-bottom:12px}
+.heading p{color:#cad8ef;line-height:1.7}
+.cards{max-width:1050px;margin:25px auto 55px;padding:0 22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.card{padding:25px;border:1px solid #00cfff;border-radius:15px;background:linear-gradient(135deg,#061d3e,#090d23);box-shadow:0 0 16px #003d72}
+.card:nth-child(2){border-color:#c05cff}
+.card:nth-child(3){border-color:#00e5c1}
+.card:nth-child(4){border-color:#ffb52b}
+.card h3{font-size:23px;margin-bottom:12px}
+.card p{color:#d0dcf3;line-height:1.7}
+.card a{text-decoration:none}
+.card button{padding:11px 18px;margin-top:20px;border:1px solid #00cfff;border-radius:25px;background:#063b7b;color:white;cursor:pointer}
+.card:nth-child(2) button{border-color:#c05cff}
+.card:nth-child(3) button{border-color:#00e5c1}
+.card:nth-child(4) button{border-color:#ffb52b}
+@media(max-width:650px){
+ header{flex-wrap:wrap;padding:12px 4%}
+ .brand{font-size:16px}.logo{width:43px;height:43px;font-size:19px}
+ nav{gap:12px}nav a{font-size:12px}
+ .home{min-height:82vh;padding:55px 6%}
+ .lion{font-size:100px;bottom:5%;right:3%;opacity:.7}
+ .cards{grid-template-columns:1fr}
 }
 </style>
 </head>
-
 <body>
 
-<section class="page" id="homePage">
+<section id="home">
+<header>
+ <div class="brand"><div class="logo">PY</div>College Notes</div>
+ <nav>
+  <a href="#" onclick="homePage(event)">Home</a>
+  <a href="#" onclick="notesPage(event)">Notes</a>
+  <a href="#about">About</a>
+ </nav>
+</header>
 
-    <div class="stars"></div>
-
-    <div class="bird">⌁</div>
-    <div class="bird">⌁</div>
-    <div class="bird">⌁</div>
-    <div class="bird">⌁</div>
-
-    <header>
-        <div class="logo"><span>PY</span> LOGO</div>
-        <div class="tag">MY COLLEGE • MY JOURNEY</div>
-    </header>
-
-    <main class="content">
-        <p class="small-title">WELCOME TO MY WORLD</p>
-
-        <h1 id="animatedName"></h1>
-
-        <div class="fire-line"></div>
-
-        <p class="subtitle">
-            Welcome to my study space<br>
-            Learn • Practice • Grow
-        </p>
-
-        <button onclick="openNotes()">EXPLORE MY NOTES →</button>
-    </main>
-
-    <footer style="text-align:center; padding:20px;">
-        Designed by Priyanshu Yadav
-    </footer>
+<main class="home">
+ <div class="bird">⌁</div>
+ <div class="bird b2">⌁</div>
+ <div class="bird b3">⌁</div>
+ <div class="content">
+  <p class="eyebrow">WELCOME TO MY STUDY SPACE</p>
+  <h1 id="name"></h1>
+  <div class="line"></div>
+  <p class="course">B.Tech CSE</p>
+  <p class="desc">Learn &nbsp; • &nbsp; Practice &nbsp; • &nbsp; Grow</p>
+  <button class="btn" onclick="notesPage()">Explore Notes →</button>
+ </div>
+ <div class="lion">🦁</div>
+ <div id="sparks"></div>
+</main>
+<footer id="about">
+ <span>PY • Priyanshu Yadav</span>
+ <span>Small Steps Make Big Dreams</span>
+ <span>College Notes © 2026</span>
+</footer>
 </section>
 
+<section id="notes">
+<header>
+ <div class="brand"><div class="logo">PY</div>College Notes</div>
+ <nav>
+  <a href="#" onclick="homePage(event)">Home</a>
+  <a href="#" onclick="notesPage(event)">Notes</a>
+ </nav>
+</header>
 
-<section id="notesPage" class="page">
+<div class="banner">
+ <div class="logo">PY</div>
+ <h2>Priyanshu <span class="gold">Yadav</span></h2>
+ <p>B.Tech CSE</p>
+ <p>Knowledge Today | Success Tomorrow</p>
+</div>
 
-    <div class="stars"></div>
+<div class="heading">
+ <h2>📖 My Notes</h2>
+ <p>Access your subject notes and study materials.</p>
+</div>
 
-    <header>
-        <div class="logo"><span>PY</span> LOGO</div>
-        <button onclick="goHome()">← HOME</button>
-    </header>
+<div class="cards">
+ <div class="card">
+  <h3>⚛ Physics</h3>
+  <p>Physics Notes and PDF materials</p>
+  <a href="docs/physics.pdf" target="_blank"><button>View Physics Notes →</button></a>
+ </div>
+ <div class="card">
+  <h3>∑ Mathematics</h3>
+  <p>Mathematics Notes and PDF materials</p>
+  <a href="docs/mathematics.pdf" target="_blank"><button>View Mathematics Notes →</button></a>
+ </div>
+ <div class="card">
+  <h3>🧪 Chemistry</h3>
+  <p>Chemistry Notes and PDF materials</p>
+  <a href="docs/chemistry.pdf" target="_blank"><button>View Chemistry Notes →</button></a>
+ </div>
+ <div class="card">
+  <h3>💻 CSE</h3>
+  <p>Computer Science Notes and PDF materials</p>
+  <a href="docs/cse.pdf" target="_blank"><button>View CSE Notes →</button></a>
+ </div>
+</div>
 
-    <div class="notes-content">
-        <p class="small-title">YOUR LEARNING SPACE</p>
-
-        <h2>Priyanshu Yadav</h2>
-
-        <div class="fire-line"></div>
-
-        <p class="subtitle">B.Tech CSE | College Notes</p>
-
-        <div class="note-card">
-            <h3>📘 Physics Notes</h3>
-            <p>Open your Physics notes PDF here.</p>
-            <button onclick="openPhysics()">OPEN PHYSICS PDF</button>
-        </div>
-
-        <button onclick="goHome()">BACK TO FIRST PAGE</button>
-
-        <footer>Keep Learning • Keep Growing</footer>
-    </div>
+<footer>
+ <span>PY • Priyanshu Yadav</span>
+ <button class="btn" style="margin:0" onclick="homePage()">← Back Home</button>
+ <span>Keep Learning • Keep Growing</span>
+</footer>
 </section>
-
 
 <script>
-const name = "Priyanshu Yadav";
-const nameBox = document.getElementById("animatedName");
-
-function showName() {
-    nameBox.innerHTML = "";
-
-    [...name].forEach((letter, index) => {
-        const span = document.createElement("span");
-        span.className = "letter";
-        span.textContent = letter === " " ? "\u00A0" : letter;
-        span.style.animationDelay = (index * 0.18) + "s";
-        nameBox.appendChild(span);
-    });
+function animateName(){
+ const box=document.getElementById("name");
+ box.innerHTML="";
+ [..."PRIYANSHU YADAV"].forEach((letter,i)=>{
+  const s=document.createElement("span");
+  s.textContent=letter===" "?"\u00a0":letter;
+  s.style.animationDelay=(i*.15)+"s";
+  box.appendChild(s);
+ });
 }
-
-function openNotes() {
-    document.getElementById("homePage").style.display = "none";
-    document.getElementById("notesPage").style.display = "block";
-    window.scrollTo(0, 0);
+function notesPage(e){
+ if(e)e.preventDefault();
+ document.getElementById("home").style.display="none";
+ document.getElementById("notes").style.display="block";
+ window.scrollTo(0,0);
 }
-
-function goHome() {
-    document.getElementById("notesPage").style.display = "none";
-    document.getElementById("homePage").style.display = "block";
-    showName();
-    window.scrollTo(0, 0);
+function homePage(e){
+ if(e)e.preventDefault();
+ document.getElementById("notes").style.display="none";
+ document.getElementById("home").style.display="block";
+ animateName();
+ window.scrollTo(0,0);
 }
-
-function openPhysics() {
-    // Change this path to match your actual PDF file.
-    window.open("docs/physics.pdf", "_blank");
+for(let i=0;i<35;i++){
+ const s=document.createElement("span");
+ s.className="spark";
+ s.style.left=Math.random()*100+"%";
+ s.style.animationDelay=Math.random()*5+"s";
+ s.style.animationDuration=(3+Math.random()*4)+"s";
+ document.getElementById("sparks").appendChild(s);
 }
-
-// Create rising fire sparks
-for (let i = 0; i < 35; i++) {
-    const spark = document.createElement("div");
-    spark.className = "spark";
-    spark.style.left = Math.random() * 100 + "%";
-    spark.style.animationDelay = Math.random() * 5 + "s";
-    spark.style.animationDuration = (3 + Math.random() * 4) + "s";
-    document.body.appendChild(spark);
-}
-
-showName();
+animateName();
 </script>
-
 </body>
 </html>
+
