@@ -5,93 +5,126 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Priyanshu Yadav | College Notes</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#020817;color:white}
-header{padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#030817;border-bottom:1px solid #17466e;position:relative;z-index:3}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#ffbd4a;--blue:#00cfff;--dark:#020817}
+body{font-family:Arial,sans-serif;background:var(--dark);color:white}
+header{padding:12px 4%;min-height:75px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#020716;border-bottom:1px solid #17466e;position:relative;z-index:5}
 .brand{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:bold}
-.logo{width:52px;height:52px;border:2px solid #ffbd4a;border-radius:50%;display:grid;place-items:center;color:#ffbd4a;font-size:23px;font-weight:bold;box-shadow:0 0 18px #ff8c00}
-nav{display:flex;gap:18px}
+.logo{width:52px;height:52px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:23px;font-weight:bold;box-shadow:0 0 18px #ff9200;flex-shrink:0}
+nav{display:flex;gap:20px}
 nav a{color:white;text-decoration:none;font-size:14px}
-nav a:hover{color:#00cfff}
-.home{min-height:85vh;position:relative;display:flex;align-items:center;padding:65px 7%;overflow:hidden;background:linear-gradient(90deg,rgba(0,5,20,.94),rgba(0,5,20,.45)),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85') center/cover}
-.content{position:relative;z-index:2;max-width:700px}
-.eyebrow{letter-spacing:4px;color:#d7e6ff}
-h1{font-size:clamp(38px,7vw,78px);margin:25px 0;color:#ffb735;text-shadow:0 0 18px #ff6500;overflow-wrap:anywhere}
-#name span{display:inline-block;opacity:0;animation:show .4s forwards}
-@keyframes show{to{opacity:1;transform:translateY(0)}from{opacity:0;transform:translateY(20px)}}
-.line{height:4px;width:200px;max-width:80%;background:linear-gradient(90deg,#ff3500,#ffe14a,#008dff);box-shadow:0 0 18px #ff7800;margin:20px 0;animation:glow 1s infinite alternate}
-@keyframes glow{to{opacity:.5;transform:scaleX(.8)}}
+nav a:hover{color:var(--blue)}
+.home{min-height:calc(100vh - 75px);position:relative;overflow:hidden;display:flex;align-items:center;padding:45px 5%;background:linear-gradient(90deg,rgba(1,6,22,.92),rgba(1,6,22,.55)),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=90') center/cover}
+.home-content{position:relative;z-index:2;width:68%;min-width:0}
+.eyebrow{letter-spacing:4px;font-size:14px;color:#dceaff}
+h1{font-size:clamp(28px,5.2vw,76px);margin:25px 0 15px;line-height:1.2;white-space:nowrap;color:white;text-shadow:0 0 16px #168dff}
+#animatedName span{display:inline-block;opacity:0;animation:letterIn .4s forwards}
+@keyframes letterIn{from{opacity:0;transform:translateY(18px);color:#ff7200;text-shadow:0 0 20px #ff7200}to{opacity:1;transform:translateY(0);color:white}}
+.gold{color:var(--gold)}
+.fire-line{height:4px;width:220px;max-width:90%;background:linear-gradient(90deg,#ff3200,#ffe04b,#00bfff);box-shadow:0 0 18px #ff7800;animation:fire 1s infinite alternate;margin:18px 0}
+@keyframes fire{to{opacity:.6;transform:scaleX(.82)}}
 .course{font-size:22px;letter-spacing:4px;margin:18px 0}
-.desc{color:#d5e5ff;letter-spacing:2px;line-height:1.9}
-.btn{border:1px solid #00cfff;border-radius:30px;padding:14px 26px;margin-top:25px;background:#053875;color:white;font-weight:bold;box-shadow:0 0 20px #008cff;cursor:pointer}
-.btn:hover{background:#0756a6}
-.lion{position:absolute;right:5%;bottom:17%;font-size:clamp(100px,20vw,220px);filter:drop-shadow(0 0 25px #ff7900);z-index:1}
-.bird{position:absolute;left:-10%;top:17%;font-size:28px;color:#b5eaff;animation:fly 16s linear infinite}
-.bird.b2{top:35%;animation-delay:-7s}
-.bird.b3{top:55%;animation-delay:-11s}
+.desc{color:#d8e6ff;letter-spacing:2px;line-height:1.9}
+.btn{display:inline-block;padding:14px 27px;margin-top:25px;border:1px solid var(--blue);border-radius:30px;background:#053b78;color:white;font-weight:bold;cursor:pointer;box-shadow:0 0 20px #008cff;text-decoration:none}
+.btn:hover{background:#0759ae}
+.lion-wrap{position:absolute;z-index:2;right:3%;bottom:13%;width:34%;max-width:470px}
+.lion-wrap img{width:100%;height:auto;display:block;object-fit:contain;filter:drop-shadow(0 0 25px #ff8b21);animation:lionGlow 2s infinite alternate}
+@keyframes lionGlow{to{filter:drop-shadow(0 0 38px #ffad38)}}
+
+/* Animated stars on BOTH pages */
+.starfield{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.star{position:absolute;width:3px;height:3px;background:white;border-radius:50%;box-shadow:0 0 9px #80ddff;animation:starMove linear infinite}
+@keyframes starMove{
+0%{transform:translate(0,0);opacity:0}
+10%{opacity:1}
+90%{opacity:1}
+100%{transform:translate(100px,-150px);opacity:0}
+}
+.bird{position:absolute;left:-10%;top:17%;font-size:25px;color:#bcecff;z-index:1;animation:fly 17s linear infinite}
+.bird.b2{top:37%;animation-delay:-6s;animation-duration:20s}
+.bird.b3{top:55%;animation-delay:-12s}
 @keyframes fly{to{left:110%;transform:translateY(35px)}}
-.spark{position:absolute;bottom:-10px;width:4px;height:4px;background:#ff9a00;border-radius:50%;box-shadow:0 0 10px orange;animation:rise 5s linear infinite}
-@keyframes rise{to{transform:translateY(-90vh);opacity:0}}
-footer{padding:22px 5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#020611;color:#c5d5ec;font-size:13px}
-#notes{display:none;min-height:100vh;background:#020817}
-.banner{text-align:center;padding:45px 15px 30px;background:linear-gradient(#06142d66,#020817),url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=85') center/cover}
-.banner .logo{width:75px;height:75px;margin:0 auto 15px;font-size:29px}
-.banner h2{font-size:clamp(35px,6vw,58px);margin:15px 0}
-.gold{color:#ffbd4a}
-.banner p{line-height:1.9;color:#d7e5ff;letter-spacing:2px}
-.heading{max-width:1050px;margin:25px auto;padding:0 22px}
-.heading h2{font-size:32px;margin-bottom:12px}
-.heading p{color:#cad8ef;line-height:1.7}
-.cards{max-width:1050px;margin:25px auto 55px;padding:0 22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-.card{padding:25px;border:1px solid #00cfff;border-radius:15px;background:linear-gradient(135deg,#061d3e,#090d23);box-shadow:0 0 16px #003d72}
-.card:nth-child(2){border-color:#c05cff}
-.card:nth-child(3){border-color:#00e5c1}
-.card:nth-child(4){border-color:#ffb52b}
-.card h3{font-size:23px;margin-bottom:12px}
-.card p{color:#d0dcf3;line-height:1.7}
+.spark{position:absolute;bottom:-8px;width:4px;height:4px;background:#ff9d17;border-radius:50%;box-shadow:0 0 10px orange;animation:rise 5s linear infinite;pointer-events:none}
+@keyframes rise{to{transform:translateY(-100vh);opacity:0}}
+footer{position:relative;z-index:2;padding:20px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#020611;border-top:1px solid #16466e;color:#c8d8f0;font-size:13px}
+
+/* Second page */
+#notesPage{display:none;min-height:100vh;position:relative;overflow:hidden;background:#020817}
+.notes-banner{position:relative;z-index:2;text-align:center;padding:35px 15px;background:linear-gradient(rgba(2,8,23,.25),rgba(2,8,23,.95)),url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=85') center/cover}
+.notes-banner .logo{width:75px;height:75px;font-size:30px;margin:0 auto 12px}
+.notes-banner h2{font-size:clamp(34px,5.5vw,58px);margin:12px 0}
+.notes-banner p{color:#e0eaff;line-height:1.9;letter-spacing:2px}
+.heading{position:relative;z-index:2;max-width:1050px;margin:25px auto;padding:0 22px}
+.heading h2{font-size:31px;margin-bottom:12px}
+.heading p{color:#cfdef5;line-height:1.7}
+.cards{position:relative;z-index:2;max-width:1050px;margin:25px auto 55px;padding:0 22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.card{padding:25px;border:1px solid #00cfff;border-radius:15px;background:linear-gradient(135deg,rgba(5,29,61,.95),rgba(6,10,29,.95));box-shadow:0 0 17px #003d72}
+.card:nth-child(2){border-color:#bd61ff;box-shadow:0 0 15px #48206a}
+.card:nth-child(3){border-color:#00e5c1;box-shadow:0 0 15px #00574e}
+.card:nth-child(4){border-color:#ffb52b;box-shadow:0 0 15px #70420a}
+.card h3{font-size:23px;margin-bottom:13px}
+.card p{color:#d0def4;line-height:1.7}
 .card a{text-decoration:none}
 .card button{padding:11px 18px;margin-top:20px;border:1px solid #00cfff;border-radius:25px;background:#063b7b;color:white;cursor:pointer}
-.card:nth-child(2) button{border-color:#c05cff}
+.card:nth-child(2) button{border-color:#bd61ff}
 .card:nth-child(3) button{border-color:#00e5c1}
 .card:nth-child(4) button{border-color:#ffb52b}
+#notesPage footer{margin-top:20px}
+
 @media(max-width:650px){
- header{flex-wrap:wrap;padding:12px 4%}
+ header{padding:12px 4%}
  .brand{font-size:16px}.logo{width:43px;height:43px;font-size:19px}
  nav{gap:12px}nav a{font-size:12px}
- .home{min-height:82vh;padding:55px 6%}
- .lion{font-size:100px;bottom:5%;right:3%;opacity:.7}
+ .home{min-height:85vh;padding:45px 5%;align-items:flex-start}
+ .home-content{width:100%;padding-top:15px}
+ h1{font-size:clamp(25px,6.1vw,40px);letter-spacing:-.5px}
+ .eyebrow{font-size:11px;letter-spacing:2px}
+ .course{font-size:17px}
+ .desc{letter-spacing:1px;font-size:14px}
+ .lion-wrap{width:43%;right:3%;bottom:4%;opacity:.95}
  .cards{grid-template-columns:1fr}
+ .notes-banner p{font-size:13px;letter-spacing:1px}
+ footer{justify-content:center;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}
 }
 </style>
 </head>
+
 <body>
 
-<section id="home">
+<section id="homePage">
 <header>
- <div class="brand"><div class="logo">PY</div>College Notes</div>
+ <div class="brand"><div class="logo">PY</div><span>College Notes</span></div>
  <nav>
-  <a href="#" onclick="homePage(event)">Home</a>
-  <a href="#" onclick="notesPage(event)">Notes</a>
+  <a href="#" onclick="showHome(event)">Home</a>
+  <a href="#" onclick="showNotes(event)">Notes</a>
   <a href="#about">About</a>
  </nav>
 </header>
 
 <main class="home">
- <div class="bird">⌁</div>
- <div class="bird b2">⌁</div>
- <div class="bird b3">⌁</div>
- <div class="content">
+ <div class="starfield" id="starsHome"></div>
+ <div class="bird">⌁</div><div class="bird b2">⌁</div><div class="bird b3">⌁</div>
+ <div class="home-content">
   <p class="eyebrow">WELCOME TO MY STUDY SPACE</p>
-  <h1 id="name"></h1>
-  <div class="line"></div>
+  <h1 id="animatedName"></h1>
+  <div class="fire-line"></div>
   <p class="course">B.Tech CSE</p>
   <p class="desc">Learn &nbsp; • &nbsp; Practice &nbsp; • &nbsp; Grow</p>
-  <button class="btn" onclick="notesPage()">Explore Notes →</button>
+  <button class="btn" onclick="showNotes()">Explore Notes →</button>
  </div>
- <div class="lion">🦁</div>
- <div id="sparks"></div>
+
+ <div class="lion-wrap">
+  <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=900&q=90"
+       alt="Lion" onerror="this.style.display='none'">
+ </div>
+ <div id="sparksHome"></div>
 </main>
+
 <footer id="about">
  <span>PY • Priyanshu Yadav</span>
  <span>Small Steps Make Big Dreams</span>
@@ -99,91 +132,119 @@ footer{padding:22px 5%;display:flex;justify-content:space-between;gap:12px;flex-
 </footer>
 </section>
 
-<section id="notes">
-<header>
- <div class="brand"><div class="logo">PY</div>College Notes</div>
- <nav>
-  <a href="#" onclick="homePage(event)">Home</a>
-  <a href="#" onclick="notesPage(event)">Notes</a>
- </nav>
-</header>
+<!-- SECOND PAGE -->
+<section id="notesPage">
+ <header>
+  <div class="brand"><div class="logo">PY</div><span>College Notes</span></div>
+  <nav>
+   <a href="#" onclick="showHome(event)">Home</a>
+   <a href="#" onclick="showNotes(event)">Notes</a>
+  </nav>
+ </header>
 
-<div class="banner">
- <div class="logo">PY</div>
- <h2>Priyanshu <span class="gold">Yadav</span></h2>
- <p>B.Tech CSE</p>
- <p>Knowledge Today | Success Tomorrow</p>
-</div>
+ <div class="notes-banner">
+  <div class="starfield" id="starsNotes"></div>
+  <div class="logo">PY</div>
+  <h2>Priyanshu <span class="gold">Yadav</span></h2>
+  <p>B.Tech CSE</p>
+  <p>Knowledge Today &nbsp; | &nbsp; Success Tomorrow</p>
+ </div>
 
-<div class="heading">
- <h2>📖 My Notes</h2>
- <p>Access your subject notes and study materials.</p>
-</div>
+ <div class="heading">
+  <h2>📖 My Notes</h2>
+  <p>Access your subject notes and study materials.</p>
+ </div>
 
-<div class="cards">
- <div class="card">
-  <h3>⚛ Physics</h3>
-  <p>Physics Notes and PDF materials</p>
-  <a href="docs/physics.pdf" target="_blank"><button>View Physics Notes →</button></a>
- </div>
- <div class="card">
-  <h3>∑ Mathematics</h3>
-  <p>Mathematics Notes and PDF materials</p>
-  <a href="docs/mathematics.pdf" target="_blank"><button>View Mathematics Notes →</button></a>
- </div>
- <div class="card">
-  <h3>🧪 Chemistry</h3>
-  <p>Chemistry Notes and PDF materials</p>
-  <a href="docs/chemistry.pdf" target="_blank"><button>View Chemistry Notes →</button></a>
- </div>
- <div class="card">
-  <h3>💻 CSE</h3>
-  <p>Computer Science Notes and PDF materials</p>
-  <a href="docs/cse.pdf" target="_blank"><button>View CSE Notes →</button></a>
- </div>
-</div>
+ <div class="cards">
+  <div class="card">
+   <h3>⚛ Physics</h3>
+   <p>Physics notes and PDF study materials.</p>
+   <a href="docs/physics.pdf" target="_blank"><button>View Physics Notes →</button></a>
+  </div>
 
-<footer>
- <span>PY • Priyanshu Yadav</span>
- <button class="btn" style="margin:0" onclick="homePage()">← Back Home</button>
- <span>Keep Learning • Keep Growing</span>
-</footer>
+  <div class="card">
+   <h3>∑ Mathematics</h3>
+   <p>Mathematics notes and PDF study materials.</p>
+   <a href="docs/mathematics.pdf" target="_blank"><button>View Mathematics Notes →</button></a>
+  </div>
+
+  <div class="card">
+   <h3>🧪 Chemistry</h3>
+   <p>Chemistry notes and PDF study materials.</p>
+   <a href="docs/chemistry.pdf" target="_blank"><button>View Chemistry Notes →</button></a>
+  </div>
+
+  <div class="card">
+   <h3>💻 CSE</h3>
+   <p>Computer Science notes and PDF study materials.</p>
+   <a href="docs/cse.pdf" target="_blank"><button>View CSE Notes →</button></a>
+  </div>
+ </div>
+
+ <footer>
+  <span>PY • Priyanshu Yadav</span>
+  <button class="btn" style="margin:0" onclick="showHome()">← Back Home</button>
+  <span>Keep Learning • Keep Growing</span>
+ </footer>
 </section>
 
 <script>
 function animateName(){
- const box=document.getElementById("name");
+ const box=document.getElementById("animatedName");
  box.innerHTML="";
  [..."PRIYANSHU YADAV"].forEach((letter,i)=>{
-  const s=document.createElement("span");
-  s.textContent=letter===" "?"\u00a0":letter;
-  s.style.animationDelay=(i*.15)+"s";
-  box.appendChild(s);
+  const span=document.createElement("span");
+  span.textContent=letter===" "?"\u00a0":letter;
+  span.style.animationDelay=(i*.13)+"s";
+  box.appendChild(span);
  });
 }
-function notesPage(e){
- if(e)e.preventDefault();
- document.getElementById("home").style.display="none";
- document.getElementById("notes").style.display="block";
+
+function showNotes(event){
+ if(event)event.preventDefault();
+ document.getElementById("homePage").style.display="none";
+ document.getElementById("notesPage").style.display="block";
  window.scrollTo(0,0);
 }
-function homePage(e){
- if(e)e.preventDefault();
- document.getElementById("notes").style.display="none";
- document.getElementById("home").style.display="block";
+function showHome(event){
+ if(event)event.preventDefault();
+ document.getElementById("notesPage").style.display="none";
+ document.getElementById("homePage").style.display="block";
  animateName();
  window.scrollTo(0,0);
 }
-for(let i=0;i<35;i++){
- const s=document.createElement("span");
- s.className="spark";
- s.style.left=Math.random()*100+"%";
- s.style.animationDelay=Math.random()*5+"s";
- s.style.animationDuration=(3+Math.random()*4)+"s";
- document.getElementById("sparks").appendChild(s);
+
+function addStars(containerId,count){
+ const box=document.getElementById(containerId);
+ for(let i=0;i<count;i++){
+  const star=document.createElement("span");
+  star.className="star";
+  star.style.left=Math.random()*100+"%";
+  star.style.top=Math.random()*100+"%";
+  star.style.animationDuration=(3+Math.random()*6)+"s";
+  star.style.animationDelay=(-Math.random()*8)+"s";
+  const size=1+Math.random()*3;
+  star.style.width=size+"px";
+  star.style.height=size+"px";
+  box.appendChild(star);
+ }
 }
+function addSparks(containerId,count){
+ const box=document.getElementById(containerId);
+ for(let i=0;i<count;i++){
+  const spark=document.createElement("span");
+  spark.className="spark";
+  spark.style.left=Math.random()*100+"%";
+  spark.style.animationDelay=Math.random()*5+"s";
+  spark.style.animationDuration=(3+Math.random()*4)+"s";
+  box.appendChild(spark);
+ }
+}
+
 animateName();
+addStars("starsHome",100);
+addStars("starsNotes",100);
+addSparks("sparksHome",35);
 </script>
 </body>
 </html>
-
