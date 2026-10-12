@@ -1,241 +1,363 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Priyanshu Yadav | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priyanshu Yadav | College Notes</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #070b22;
+    color: white;
+    overflow-x: hidden;
+}
+
+.page {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at top, #25205d, #070b22 70%);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 8%;
+    position: relative;
+    z-index: 5;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #ff9d00;
+    padding: 10px 14px;
+    border-radius: 12px;
+    box-shadow: 0 0 18px #ff6500;
+}
+
+.logo span {
+    color: #ff9d00;
+}
+
+.tag {
+    color: #c7c8ff;
+    font-size: 14px;
+}
+
+.content {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 15px 70px;
+    position: relative;
+    z-index: 2;
+}
+
+.small-title {
+    color: #ffbd59;
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: clamp(35px, 7vw, 76px);
+    font-weight: 900;
+    letter-spacing: 2px;
+    min-height: 1.3em;
+    text-shadow: 0 0 20px #9d48ff;
+    overflow-wrap: anywhere;
+}
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    animation: appear 0.3s forwards;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        color: #ff5c00;
+        text-shadow: 0 0 25px #ff2400;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        color: #ffffff;
+        text-shadow: 0 0 15px #9d48ff;
+    }
+}
+
+.fire-line {
+    width: 180px;
+    height: 4px;
+    margin: 20px auto;
+    background: linear-gradient(90deg, #ff2400, #ffcc00, #ff4500);
+    border-radius: 100%;
+    box-shadow: 0 0 12px #ff4500, 0 0 30px #ff9d00;
+    animation: fire 0.8s infinite alternate;
+}
+
+@keyframes fire {
+    from { transform: scaleX(0.8); opacity: 0.65; }
+    to { transform: scaleX(1.2); opacity: 1; }
+}
+
+.subtitle {
+    color: #d1d4ff;
+    font-size: 17px;
+    margin: 10px 0 28px;
+    line-height: 1.7;
+}
+
+button {
+    padding: 15px 28px;
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 22px #ff4c68;
+    transition: transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.07);
+}
+
+.bird {
+    position: absolute;
+    color: #dce5ff;
+    font-size: 25px;
+    opacity: 0.7;
+    animation: fly 12s linear infinite;
+    z-index: 1;
+}
+
+.bird:nth-child(1) { top: 20%; animation-duration: 13s; }
+.bird:nth-child(2) { top: 34%; animation-duration: 17s; animation-delay: -5s; }
+.bird:nth-child(3) { top: 48%; animation-duration: 15s; animation-delay: -8s; }
+.bird:nth-child(4) { top: 65%; animation-duration: 19s; animation-delay: -3s; }
+
+@keyframes fly {
+    from { left: -10%; transform: translateY(0) scaleX(1); }
+    50% { transform: translateY(-35px) scaleX(1); }
+    to { left: 110%; transform: translateY(10px) scaleX(1); }
+}
+
+.spark {
+    position: absolute;
+    bottom: -15px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ff9d00;
+    box-shadow: 0 0 12px #ff4500;
+    animation: rise 5s linear infinite;
+}
+
+@keyframes rise {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-100vh); opacity: 0; }
+}
+
+.stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white 50%, transparent),
+        radial-gradient(2px 2px at 80% 20%, white 50%, transparent),
+        radial-gradient(2px 2px at 65% 70%, white 50%, transparent),
+        radial-gradient(2px 2px at 35% 80%, white 50%, transparent);
+    background-size: 180px 180px;
+    animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.3; }
+    to { opacity: 0.9; }
+}
+
+#notesPage {
+    display: none;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+.notes-content {
+    max-width: 850px;
+    margin: 45px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.notes-content h2 {
+    font-size: 34px;
+    margin: 30px 0 15px;
+}
+
+.note-card {
+    margin: 25px auto;
+    max-width: 500px;
+    padding: 25px;
+    border: 1px solid #7165dc;
+    background: #151638;
+    border-radius: 18px;
+    box-shadow: 0 0 20px #25205d;
+}
+
+.note-card p {
+    color: #d1d4ff;
+    margin: 15px 0 22px;
+}
+
+footer {
+    color: #9da4d5;
+    font-size: 12px;
+    margin-top: 45px;
+}
+
+@media (max-width: 600px) {
+    header { padding: 18px 5%; }
+    .tag { font-size: 11px; }
+    .subtitle { font-size: 15px; }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- WELCOME SCREEN -->
-   <div class="lion">
-  <img src="lion.png" alt="Lion">
-</div>
-  <section id="welcome" class="welcome-screen">
+<section class="page" id="homePage">
+
     <div class="stars"></div>
 
-    <div class="welcome-top">
-      <span>CODE</span>
-      <span>LEARN</span>
-      <span>BUILD</span>
-      <span>GROW</span>
-    </div>
+    <div class="bird">⌁</div>
+    <div class="bird">⌁</div>
+    <div class="bird">⌁</div>
+    <div class="bird">⌁</div>
 
-    <div class="welcome-center">
-      <div class="welcome-card">
-        <p class="journey">THE JOURNEY BEGINS</p>
-
-        <h1 class="fall word1">WELCOME</h1>
-        <h2 class="fall word2">TO MY PROFILE</h2>
-        <h3 class="fall word3">PRIYANSHU YADAV</h3>
-
-        <div class="neon-line"></div>
-
-        <p class="welcome-tagline">
-          DREAM BIG <span>✦</span> WORK HARD
-          <span>✦</span> MAKE IT HAPPEN
-        </p>
-
-        <p class="welcome-message">
-          🚀 Your journey starts here...
-        </p>
-
-        <p class="timer-text">
-          Website opening in
-          <strong id="countdown">10</strong> seconds
-        </p>
-
-        <button id="enterBtn" class="enter-btn">
-          ENTER WEBSITE →
-        </button>
-      </div>
-    </div>
-
-    <div class="welcome-bottom">
-      <span>✦</span> B.TECH CSE STUDENT
-      <span>✦</span> FUTURE DEVELOPER
-      <span>✦</span>
-    </div>
-
-    <div class="ticker">
-      <div class="ticker-track">
-        <span>PRIYANSHU YADAV ✦ B.TECH CSE ✦ LEARN • BUILD • GROW ✦ </span>
-        <span>PRIYANSHU YADAV ✦ B.TECH CSE ✦ LEARN • BUILD • GROW ✦ </span>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- MAIN WEBSITE -->
-  <div id="mainWebsite" class="main-website">
-
-    <header class="navbar">
-      <div class="brand">
-        <div class="brand-icon">&lt;/&gt;</div>
-        <div>
-          <strong>PRIYANSHU YADAV</strong>
-          <small>B.Tech CSE | Student</small>
-        </div>
-      </div>
-
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#subjects">Subjects</a>
-        <a href="#about">About</a>
-      </nav>
-
-      <a class="connect-btn" href="#about">Let's Connect ↗</a>
+    <header>
+        <div class="logo"><span>PY</span> LOGO</div>
+        <div class="tag">MY COLLEGE • MY JOURNEY</div>
     </header>
 
+    <main class="content">
+        <p class="small-title">WELCOME TO MY WORLD</p>
 
-    <!-- HERO -->
-    <main>
-      <section id="home" class="hero">
-        <div class="hero-content">
-          <p class="hello">Hello, I'm</p>
+        <h1 id="animatedName"></h1>
 
-          <h1 class="gradient-name">Priyanshu Yadav</h1>
+        <div class="fire-line"></div>
 
-          <p class="hero-subtitle">
-            B.Tech CSE Student
-            <span>|</span> Learner
-            <span>|</span> Future Developer
-          </p>
+        <p class="subtitle">
+            Welcome to my study space<br>
+            Learn • Practice • Grow
+        </p>
 
-          <p class="hero-description">
-            I am a passionate Computer Science student, always eager
-            to learn new technologies, improve my skills and build
-            amazing projects.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#subjects" class="primary-btn">
-              Explore Subjects →
-            </a>
-            <a href="#about" class="secondary-btn">
-              About Me ✉
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-art">
-          <div class="art-glow"></div>
-          <div class="code-window">
-            <div class="window-top">
-              <span></span><span></span><span></span>
-              <small>my-journey.cpp</small>
-            </div>
-            <div class="code-lines">
-              <p><span class="code-purple">#include</span> &lt;iostream&gt;</p>
-              <p><span class="code-blue">using namespace</span> std;</p>
-              <br>
-              <p><span class="code-purple">int</span> main() {</p>
-              <p class="indent"><span class="code-blue">string</span> name =</p>
-              <p class="indent code-green">"Priyanshu Yadav";</p>
-              <p class="indent">cout &lt;&lt; <span class="code-green">"Keep Learning!"</span>;</p>
-              <p class="indent"><span class="code-purple">return</span> 0;</p>
-              <p>}</p>
-            </div>
-          </div>
-          <div class="art-caption">
-            <span>Dream</span>
-            <span>Code</span>
-            <span>Create</span>
-          </div>
-          <div class="art-orbit orbit-one"></div>
-          <div class="art-orbit orbit-two"></div>
-        </div>
-      </section>
-
-
-      <!-- SUBJECTS -->
-      <section id="subjects" class="subjects-section">
-        <div class="section-heading">
-          <p>MY STUDY MATERIAL</p>
-          <h2>My <span>Subjects</span></h2>
-          <div class="heading-line"></div>
-          <p class="section-description">
-            Open and read my B.Tech subject notes in PDF format.
-          </p>
-        </div>
-
-        <div class="subject-grid">
-
-          <article class="subject-card pink">
-            <div class="subject-icon">⚛</div>
-            <h3>Quantum Physics</h3>
-            <p>Physics Notes & Study Material</p>
-            <a href="notes/Quantumphysics.pdf" target="_blank">
-              View PDF <span>↗</span>
-            </a>
-          </article>
-
-          <article class="subject-card blue">
-            <div class="subject-icon">∑</div>
-            <h3>Engineering Mathematics</h3>
-            <p>Mathematics Notes & Study Material</p>
-            <a href="notes/maths.pdf" target="_blank">
-              View PDF <span>↗</span>
-            </a>
-          </article>
-
-          <article class="subject-card purple">
-            <div class="subject-icon">&lt;/&gt;</div>
-            <h3>Programming in C</h3>
-            <p>Programming Notes & Study Material</p>
-            <a href="notes/programming.pdf" target="_blank">
-              View PDF <span>↗</span>
-            </a>
-          </article>
-
-          <article class="subject-card yellow">
-            <div class="subject-icon">ϟ</div>
-            <h3>Electrical Engineering</h3>
-            <p>Electrical Notes & Study Material</p>
-            <a href="notes/electrical.pdf" target="_blank">
-              View PDF <span>↗</span>
-            </a>
-          </article>
-
-        </div>
-      </section>
-
-
-      <!-- ABOUT -->
-      <section id="about" class="about-section">
-        <div class="about-card">
-          <p class="about-label">GET TO KNOW ME</p>
-          <h2>About <span>Me</span></h2>
-          <p>
-            Hello! I am Priyanshu Yadav, a first-year B.Tech
-            Computer Science and Engineering student. I enjoy
-            learning programming and exploring new technologies.
-            This website is my space for sharing my study material
-            and learning journey.
-          </p>
-          <div class="about-details">
-            <div><strong>Name</strong><span>Priyanshu Yadav</span></div>
-            <div><strong>Course</strong><span>B.Tech CSE</span></div>
-            <div><strong>Year</strong><span>1st Year</span></div>
-          </div>
-        </div>
-      </section>
+        <button onclick="openNotes()">EXPLORE MY NOTES →</button>
     </main>
 
-
-    <footer class="footer">
-      <div class="footer-ticker">
-        <div class="footer-track">
-          <span>PRIYANSHU YADAV ✦ B.TECH CSE ✦ LEARN • BUILD • GROW ✦ </span>
-          <span>PRIYANSHU YADAV ✦ B.TECH CSE ✦ LEARN • BUILD • GROW ✦ </span>
-        </div>
-      </div>
-      <p>© 2026 Priyanshu Yadav | Keep Learning, Keep Growing</p>
+    <footer style="text-align:center; padding:20px;">
+        Designed by Priyanshu Yadav
     </footer>
+</section>
 
-  </div>
 
-  <script src="script.js"></script>
+<section id="notesPage" class="page">
+
+    <div class="stars"></div>
+
+    <header>
+        <div class="logo"><span>PY</span> LOGO</div>
+        <button onclick="goHome()">← HOME</button>
+    </header>
+
+    <div class="notes-content">
+        <p class="small-title">YOUR LEARNING SPACE</p>
+
+        <h2>Priyanshu Yadav</h2>
+
+        <div class="fire-line"></div>
+
+        <p class="subtitle">B.Tech CSE | College Notes</p>
+
+        <div class="note-card">
+            <h3>📘 Physics Notes</h3>
+            <p>Open your Physics notes PDF here.</p>
+            <button onclick="openPhysics()">OPEN PHYSICS PDF</button>
+        </div>
+
+        <button onclick="goHome()">BACK TO FIRST PAGE</button>
+
+        <footer>Keep Learning • Keep Growing</footer>
+    </div>
+</section>
+
+
+<script>
+const name = "Priyanshu Yadav";
+const nameBox = document.getElementById("animatedName");
+
+function showName() {
+    nameBox.innerHTML = "";
+
+    [...name].forEach((letter, index) => {
+        const span = document.createElement("span");
+        span.className = "letter";
+        span.textContent = letter === " " ? "\u00A0" : letter;
+        span.style.animationDelay = (index * 0.18) + "s";
+        nameBox.appendChild(span);
+    });
+}
+
+function openNotes() {
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("notesPage").style.display = "block";
+    window.scrollTo(0, 0);
+}
+
+function goHome() {
+    document.getElementById("notesPage").style.display = "none";
+    document.getElementById("homePage").style.display = "block";
+    showName();
+    window.scrollTo(0, 0);
+}
+
+function openPhysics() {
+    // Change this path to match your actual PDF file.
+    window.open("docs/physics.pdf", "_blank");
+}
+
+// Create rising fire sparks
+for (let i = 0; i < 35; i++) {
+    const spark = document.createElement("div");
+    spark.className = "spark";
+    spark.style.left = Math.random() * 100 + "%";
+    spark.style.animationDelay = Math.random() * 5 + "s";
+    spark.style.animationDuration = (3 + Math.random() * 4) + "s";
+    document.body.appendChild(spark);
+}
+
+showName();
+</script>
+
 </body>
 </html>
